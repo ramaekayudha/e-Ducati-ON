@@ -1,15 +1,15 @@
 `e-Ducati ON V1.0 Enterprise
-Aplikasi Web Prediksi Kesiapan Jurusan Informatika & Simulator Akademik
-Proyek Ujian Akhir Semester (UAS) - Pemrograman Web I (IF207)
+`Aplikasi Web Prediksi Kesiapan Jurusan Informatika & Simulator Akademik
+`Proyek Ujian Akhir Semester (UAS) - Pemrograman Web I (IF207)
 
-Status: Live
-HTML5
-CSS3
-JavaScript
+`Status: Live
+`HTML5
+`CSS3
+`JavaScript
 
-🌐 Link Aplikasi & Repository
-Live Website (GitHub Pages): https://ramaekayudha.github.io/e-Ducati-ON/
-Repository GitHub: https://github.com/ramaekayudha/e-Ducati-ON
+`🌐 Link Aplikasi & Repository
+`Live Website (GitHub Pages): https://ramaekayudha.github.io/e-Ducati-ON/
+`Repository GitHub: https://github.com/ramaekayudha/e-Ducati-ON
 
 📌 Informasi Proyek
 Universitas: Universitas Siber Asia (UNSIA)
