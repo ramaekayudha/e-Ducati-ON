@@ -46,7 +46,7 @@ const QUESTIONS_DB = [
 
 const TEAM_DB = [
     { nama: "Rama Eka Yudha", nim: "250401010385", peran: "Lead Developer & Arsitek" },
-    { nama: "[Nama Anggota 2]", nim: "[NIM]", peran: "UI/UX Designer" },
+    { nama: "Aditya Nanda", nim: "250401010388", peran: "UI/UX Designer" },
     { nama: "[Nama Anggota 3]", nim: "[NIM]", peran: "Algorithm Specialist" },
     { nama: "[Nama Anggota 4]", nim: "[NIM]", peran: "Database Engineer" },
     { nama: "[Nama Anggota 5]", nim: "[NIM]", peran: "Documentation & Testing" }
