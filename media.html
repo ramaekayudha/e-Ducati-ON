@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Hub - e-Ducati ON</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">e-Ducati <span>ON</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="assessment.html">Assessment</a>
+            <a href="curriculum.html">Curriculum</a>
+            <a href="media.html">Media</a>
+            <a href="contributor.html">Team</a>
+        </div>
+    </nav>
+
+    <section class="container">
+        <h2 class="section-title reveal">Enterprise Media Hub</h2>
+        <p class="reveal">Akses langsung ke arsip visual dan audio e-Ducati ON. Tekan play untuk menghubungkan sistem.</p>
+        
+        <div class="media-grid">
+            <!-- Video Media Panel -->
+            <div class="media-panel reveal">
+                <h3 class="media-title">Ignition Sequence</h3>
+                <video controls preload="metadata" poster="assets/media/img/Late Night Logic.png" style="border: 1px solid #333;">
+                    <source src="assets/media/video/intro.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung tag video.
+                </video>
+                <p style="margin-top: 15px; color: var(--text-muted); font-size: 0.9rem;">Video sinematik pengantar mesin performa tinggi Informatika.</p>
+            </div>
+            
+            <!-- Audio Media Panel -->
+            <div class="media-panel reveal">
+                <h3 class="media-title">System Monologue</h3>
+                <audio controls preload="metadata" style="margin-top: 15px;">
+                    <source src="assets/media/audio/podcast.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung tag audio.
+                </audio>
+                <p style="margin-top: 15px; color: var(--text-muted); font-size: 0.9rem;">Podcast audio: Mentalitas hardcore seorang arsitek kode.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENTERPRISE GALLERY -->
+    <section class="container">
+        <h2 class="section-title reveal">The Architect's Gallery</h2>
+        <p class="reveal">Tangkapan layar momen di balik layar. Ini adalah habitat di mana logika dirakit. Hover gambar untuk melihat detailnya.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item reveal">
+                <img src="assets/media/img/Late Night Logic.png" alt="Late Night Logic">
+                <div class="gallery-caption">Late Night Logic</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="assets/media/img/Server Architecture.png" alt="Server Architecture">
+                <div class="gallery-caption">Server Architecture</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="assets/media/img/Algorithm Breakdown.png" alt="Algorithm Breakdown">
+                <div class="gallery-caption">Algorithm Breakdown</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="assets/media/img/The Command Center.png" alt="The Command Center">
+                <div class="gallery-caption">The Command Center</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="assets/media/img/Team Synchronization.png" alt="Team Synchronization">
+                <div class="gallery-caption">Team Synchronization</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="assets/media/img/Data Visualization.png" alt="Data Visualization">
+                <div class="gallery-caption">Data Visualization</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="currentYear">2026</span> e-Ducati ON Enterprise. UNSIA PJJ Informatika IF207.</p>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

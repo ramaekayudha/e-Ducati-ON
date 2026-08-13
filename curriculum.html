@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Matrix - e-Ducati ON</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .krs-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">e-Ducati <span>ON</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="assessment.html">Assessment</a>
+            <a href="curriculum.html">Curriculum</a>
+            <a href="media.html">Media</a>
+            <a href="contributor.html">Team</a>
+        </div>
+    </nav>
+
+    <!-- TABEL KRS -->
+    <section class="container reveal">
+        <h2 class="section-title">The Matrix: KRS Blueprint</h2>
+        <p>Spesifikasi mesin Anda. Total SKS yang sudah diambil (Terunci/Locked): <strong id="totalSks" style="color:var(--accent-orange);"></strong></p>
+        
+        <div class="table-wrapper" style="margin-top: 20px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kode</th>
+                        <th>Mata Kuliah</th>
+                        <th>SKS</th>
+                        <th>Dosen Pengampu</th>
+                        <th>Kategori</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="curriculumTableBody">
+                    <!-- Data dinamis diisi oleh app.js -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FORM PERENCANAAN KRS MENDATANG -->
+    <section class="container reveal">
+        <h2 class="section-title">Future KRS Planner</h2>
+        <p>Rancang masa depan akademik Anda. Tambahkan mata kuliah untuk semester mendatang. <em>(Catatan: Penambahan ini tidak akan mempengaruhi perhitungan IPK Semester 1)</em></p>
+        
+        <form id="krsForm" class="cockpit-panel" style="margin-top: 30px;">
+            <div class="krs-form-grid">
+                <div class="form-group">
+                    <label>Nama Mata Kuliah</label>
+                    <input type="text" id="matkulInput" placeholder="cth: Pemrograman Web II" required>
+                </div>
+                <div class="form-group">
+                    <label>Dosen Pengampu</label>
+                    <input type="text" id="dosenInput" placeholder="cth: Riad Sahara, S.SI, MT" required>
+                </div>
+                <div class="form-group">
+                    <label>Jumlah SKS</label>
+                    <select id="sksInput" required>
+                        <option value="2">2 SKS</option>
+                        <option value="3">3 SKS</option>
+                        <option value="4">4 SKS</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Kategori</label>
+                    <select id="kategoriInput" required>
+                        <option value="Teknis">Teknis</option>
+                        <option value="Logika">Logika</option>
+                        <option value="Humanis">Humanis</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tahun Akademik</label>
+                    <input type="text" id="tahunInput" placeholder="cth: 2026/2027" required>
+                </div>
+                <div class="form-group">
+                    <label>Semester</label>
+                    <input type="number" id="semesterInput" placeholder="cth: 2" min="2" max="8" required>
+                </div>
+            </div>
+            <button type="submit" class="btn-primary">Tambahkan ke KRS</button>
+        </form>
+    </section>
+
+    <!-- STATISTIK -->
+    <section class="container reveal">
+        <h2 class="section-title">Statistical Difficulty Map</h2>
+        <p>Visualisasi data tingkat kesulitan prediktif mahasiswa sebelumnya.</p>
+        <div class="chart-container" id="statsChart">
+            <!-- Bars diisi oleh app.js -->
+        </div>
+    </section>
+
+    <!-- IPK SIMULATOR -->
+    <section class="container reveal">
+        <h2 class="section-title">IPK Target Simulator</h2>
+        <p>Prediksi target IPK Anda berdasarkan nilai yang dipilih. (Sistem terkunci, hanya memproses 19 SKS Semester 1).</p>
+        
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 50px; margin-top: 30px;">
+            <form id="ipkForm" class="cockpit-panel">
+                <div id="ipkInputs">
+                    <!-- Input Dropdown diisi oleh math.js -->
+                </div>
+            </form>
+            
+            <div style="background: var(--bg-secondary); padding: 40px; border: 1px solid #333; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="font-family: var(--font-mono); color: var(--text-muted);">PREDICTED IPK</h3>
+                <h1 id="ipkResult" style="font-family: var(--font-mono); font-size: 6rem; margin-top: 20px; color: var(--accent-orange);">0.00</h1>
+                <p style="font-size: 0.8rem; margin-top: 10px;">*Sistem terkunci pada 19 SKS Semester 1</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HUMANIST SECTION -->
+    <section class="humanist-section reveal">
+        <h2 class="section-title" style="border: none; padding: 0; font-size: 3rem; margin-bottom: 40px;">The Human Blueprint</h2>
+        <p class="humanist-quote">"Teknologi yang hebat bukan hanya tentang logika mesin yang dingin, melainkan tentang bagaimana mesin itu menyentuh kemanusiaan. Estetika Humanisme mengajarkan kita bahwa <mark style="background: transparent; color: var(--accent-orange); border-bottom: 1px solid var(--accent-orange);">kode yang baik adalah kode yang memahami manusia.</mark>"</p>
+        <p class="humanist-author">- Refleksi dari Mata Kuliah Estetika Humanisme (2 SKS)</p>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="currentYear">2026</span> e-Ducati ON Enterprise. UNSIA PJJ Informatika IF207.</p>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/math.js"></script>
+</body>
+</html>
