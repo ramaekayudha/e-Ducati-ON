@@ -154,10 +154,10 @@ body {
     color: var(--text-muted);
 }
 .btn-secondary:hover {
-    border-color: #ff4444;
-    color: #ff4444;
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
     transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(255, 68, 68, 0.2);
+    box-shadow: 0 10px 20px rgba(255, 84, 0, 0.1);
 }
 .btn-secondary:disabled { 
     opacity: 0.3; 
@@ -310,11 +310,9 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     margin-top: 40px;
     position: relative;
 }
-
-/* Garis Vertikal Utama antar Node */
 .tree-node {
     position: relative;
-    padding-bottom: 80px; /* Ruang untuk garis */
+    padding-bottom: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -330,8 +328,6 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     background: var(--accent-orange);
     box-shadow: 0 0 8px rgba(255, 84, 0, 0.6);
 }
-
-/* Node Cabang Tim (Level 3) */
 .tree-children {
     display: flex;
     justify-content: center;
@@ -342,7 +338,6 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     width: 100%;
     max-width: 1200px;
 }
-/* Garis turun dari Lead Developer ke cabang bawah */
 .tree-children::before {
     content: '';
     position: absolute;
@@ -354,7 +349,6 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     background: var(--accent-orange);
     box-shadow: 0 0 8px rgba(255, 84, 0, 0.6);
 }
-/* Garis Horizontal yang menghubungkan anggota Level 3 */
 .tree-children::after {
     content: '';
     position: absolute;
@@ -365,15 +359,13 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     background: var(--accent-orange);
     box-shadow: 0 0 8px rgba(255, 84, 0, 0.6);
 }
-
 .tree-child {
     position: relative;
-    padding-top: 80px; /* Ruang untuk garis turun dari horizontal */
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-/* Garis Vertikal turun ke setiap kartu anggota */
 .tree-child::before {
     content: '';
     position: absolute;
@@ -384,10 +376,6 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     height: 80px;
     background: var(--accent-orange);
     box-shadow: 0 0 8px rgba(255, 84, 0, 0.6);
-}
-/* Titik Node (Circle) di dasar garis */
-.tree-node:not(:last-child)::before, .tree-child::before {
-    /* Override format dot */
 }
 .tree-dot {
     position: absolute;
@@ -440,8 +428,6 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     background-color: #1a1a1a;
     transform: rotateY(180deg);
 }
-
-/* Foto Sisi Depan (Dominan) */
 .profile-img-front {
     width: 180px;
     height: 180px;
@@ -476,8 +462,6 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     font-size: 5rem;
     color: var(--text-muted);
 }
-
-/* Foto Sisi Belakang (Kecil, di atas data) */
 .profile-img-back {
     width: 80px;
     height: 80px;
@@ -502,11 +486,8 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     font-size: 2.5rem;
     color: var(--text-muted);
 }
-
-/* Teks Sisi Belakang */
 .flip-card-back h3 { color: var(--accent-orange); font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 5px; }
 .flip-card-back p { color: var(--text-silver); font-family: var(--font-mono); font-size: 0.8rem; }
-
 .social-links {
     display: flex;
     gap: 12px;
@@ -569,7 +550,6 @@ video, audio {
     outline: none; 
     filter: contrast(1.1);
 }
-
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -623,6 +603,17 @@ footer .footer-license {
     margin-top: 10px;
     color: #555;
     font-size: 0.7rem;
+}
+/* Styling Tautan Lisensi */
+footer .footer-license a {
+    color: #777;
+    text-decoration: none;
+    border-bottom: 1px dotted #555;
+    transition: color 0.3s, border-color 0.3s;
+}
+footer .footer-license a:hover {
+    color: var(--accent-orange);
+    border-bottom: 1px solid var(--accent-orange);
 }
 footer .footer-hashtags {
     margin-top: 10px;
