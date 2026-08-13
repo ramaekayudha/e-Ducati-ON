@@ -216,11 +216,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 8. Render Contributor Tree (Vertikal Flowchart)
+    // 8. Render Contributor Tree (Vertikal Flowchart - 2 Level)
     const contributorGrid = document.getElementById('contributorGrid');
     if(contributorGrid) {
         
-        // Fungsi pembuat kartu individual
         function renderCard(member) {
             const photoFrontHTML = member.foto 
                 ? `<img src="${member.foto}" alt="${member.nama}" class="profile-img-front">` 
@@ -258,32 +257,25 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
 
-        // Algoritma Vertical Flowchart
         let treeHTML = `<div class="tree-wrapper">`;
         
-        const l1 = TEAM_DB.find(m => m.hierarchy === 1);
-        if(l1) {
-            treeHTML += `<div class="tree-node">${renderCard(l1)}<div class="tree-dot"></div></div>`;
+        const parent = TEAM_DB.find(m => m.hierarchy === 1);
+        if(parent) {
+            treeHTML += `<div class="tree-node">${renderCard(parent)}</div>`;
             
-            const l2 = TEAM_DB.find(m => m.hierarchy === 2);
-            if(l2) {
-                treeHTML += `<div class="tree-node">${renderCard(l2)}<div class="tree-dot"></div></div>`;
-                
-                const l3_members = TEAM_DB.filter(m => m.hierarchy === 3);
-                if(l3_members.length > 0) {
-                    treeHTML += `<div class="tree-children">`;
-                    l3_members.forEach(m => {
-                        treeHTML += `<div class="tree-child">${renderCard(m)}</div>`;
-                    });
-                    treeHTML += `</div>`;
-                }
+            const children = TEAM_DB.filter(m => m.hierarchy === 2);
+            if(children.length > 0) {
+                treeHTML += `<div class="tree-children">`;
+                children.forEach(m => {
+                    treeHTML += `<div class="tree-child">${renderCard(m)}</div>`;
+                });
+                treeHTML += `</div>`;
             }
         }
         treeHTML += `</div>`;
         
         contributorGrid.innerHTML = treeHTML;
 
-        // Pasang Event Listener untuk Kartu yang baru dirender
         document.querySelectorAll('.flip-card').forEach(card => {
             card.addEventListener('click', () => {
                 card.classList.toggle('flipped');
@@ -295,7 +287,77 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Re-observe for reveal animations
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    // 9. THE PIT STOP: DEBUG TERMINAL LOGIC
+    const pitstopContainer = document.getElementById('pitstopContainer');
+    if(pitstopContainer) {
+        let currentChallengeIndex = 0;
+        let score = 0;
+
+        function renderChallenge() {
+            if (currentChallengeIndex >= CHALLENGES_DB.length) {
+                pitstopContainer.innerHTML = `
+                    <div class="terminal-output">
+                        <p>> SYSTEM RESTORED.</p>
+                        <p>> All bugs fixed. Engine running at 100% efficiency.</p>
+                        <h3 class="terminal-score">Final Score: ${score}/${CHALLENGES_DB.length}</h3>
+                        <button id="restartTerminal" class="btn-primary">Restart Sequence</button>
+                    </div>
+                `;
+                document.getElementById('restartTerminal').addEventListener('click', () => {
+                    currentChallengeIndex = 0;
+                    score = 0;
+                    renderChallenge();
+                });
+                return;
+            }
+
+            const challenge = CHALLENGES_DB[currentChallengeIndex];
+            let optionsHTML = '';
+            challenge.options.forEach((opt, index) => {
+                optionsHTML += `<button class="btn-terminal-opt" data-index="${index}">${opt}</button>`;
+            });
+
+            pitstopContainer.innerHTML = `
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">debug_terminal.sh</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="terminal-prompt">> ERROR DETECTED: ${challenge.title}</p>
+                    <textarea class="code-box" readonly>${challenge.code}</textarea>
+                    <p class="terminal-prompt">> Select the correct fix to proceed:</p>
+                    <div class="terminal-options">${optionsHTML}</div>
+                    <div class="terminal-feedback" id="terminalFeedback"></div>
+                </div>
+            `;
+
+            document.querySelectorAll('.btn-terminal-opt').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const selectedIdx = parseInt(this.getAttribute('data-index'));
+                    const feedbackDiv = document.getElementById('terminalFeedback');
+                    
+                    if (selectedIdx === challenge.answer) {
+                        score++;
+                        feedbackDiv.innerHTML = `<p class="success">> ${challenge.explanation}</p>`;
+                        this.classList.add('correct');
+                        currentChallengeIndex++;
+                        setTimeout(renderChallenge, 2500);
+                    } else {
+                        feedbackDiv.innerHTML = `<p class="error">> FIX REJECTED. Engine stall. Try again.</p>`;
+                        this.classList.add('wrong');
+                        setTimeout(() => {
+                            this.classList.remove('wrong');
+                            feedbackDiv.innerHTML = '';
+                        }, 2000);
+                    }
+                });
+            });
+        }
+        renderChallenge();
     }
 });

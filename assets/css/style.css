@@ -107,6 +107,22 @@ body {
     border-left: 2px solid var(--accent-orange);
     padding-left: 15px;
 }
+.brand-attitude b {
+    color: var(--text-silver);
+    font-weight: 700;
+}
+.brand-attitude i {
+    color: var(--text-muted);
+    font-style: italic;
+}
+.brand-attitude u {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-orange);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    color: var(--accent-orange);
+    font-weight: bold;
+}
 .hero-stats {
     margin-top: 40px;
     text-align: left;
@@ -301,7 +317,7 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
 }
 .humanist-author { color: var(--accent-orange); font-family: var(--font-mono); }
 
-/* VERTICAL FLOWCHART TREE (CONTRIBUTOR) */
+/* VERTICAL FLOWCHART TREE (CONTRIBUTOR) - 2 LEVEL */
 .tree-wrapper {
     display: flex;
     flex-direction: column;
@@ -312,15 +328,15 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
 }
 .tree-node {
     position: relative;
-    padding-bottom: 80px;
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.tree-node:not(:last-child)::after {
+.tree-node::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
@@ -332,36 +348,24 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px;
     position: relative;
     padding-top: 80px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
 }
 .tree-children::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 80px;
-    background: var(--accent-orange);
-    box-shadow: 0 0 8px rgba(255, 84, 0, 0.6);
-}
-.tree-children::after {
-    content: '';
-    position: absolute;
-    top: 80px;
-    left: 20%;
-    right: 20%;
+    left: 10%;
+    right: 10%;
     height: 2px;
     background: var(--accent-orange);
     box-shadow: 0 0 8px rgba(255, 84, 0, 0.6);
 }
 .tree-child {
     position: relative;
-    padding-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -369,7 +373,7 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
 .tree-child::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -80px;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
@@ -377,23 +381,11 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     background: var(--accent-orange);
     box-shadow: 0 0 8px rgba(255, 84, 0, 0.6);
 }
-.tree-dot {
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    background: var(--accent-orange);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent-orange);
-    z-index: 2;
-}
 
 /* 3D FLIP CARDS, PHOTOS & SOCIAL LINKS */
 .flip-card {
     background: transparent;
-    width: 260px;
+    width: 220px;
     height: 380px;
     perspective: 1200px;
     cursor: pointer;
@@ -429,8 +421,8 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     transform: rotateY(180deg);
 }
 .profile-img-front {
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--accent-orange);
@@ -443,8 +435,8 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     box-shadow: 0 0 25px rgba(255, 84, 0, 0.8);
 }
 .avatar-placeholder-front {
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     background: #222;
     display: flex;
@@ -459,12 +451,12 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     box-shadow: 0 0 25px rgba(255, 84, 0, 0.8);
 }
 .avatar-placeholder-front i {
-    font-size: 5rem;
+    font-size: 4rem;
     color: var(--text-muted);
 }
 .profile-img-back {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--accent-orange);
@@ -472,8 +464,8 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     box-shadow: 0 0 15px rgba(255, 84, 0, 0.5);
 }
 .avatar-placeholder-back {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background: #222;
     display: flex;
@@ -483,20 +475,20 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     border: 2px solid var(--accent-orange);
 }
 .avatar-placeholder-back i {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--text-muted);
 }
-.flip-card-back h3 { color: var(--accent-orange); font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 5px; }
-.flip-card-back p { color: var(--text-silver); font-family: var(--font-mono); font-size: 0.8rem; }
+.flip-card-back h3 { color: var(--accent-orange); font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 5px; }
+.flip-card-back p { color: var(--text-silver); font-family: var(--font-mono); font-size: 0.7rem; }
 .social-links {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     margin-top: 15px;
     justify-content: center;
 }
 .social-links a {
     color: var(--text-silver);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     transition: color 0.3s, transform 0.3s;
 }
 .social-links a:hover {
@@ -591,6 +583,110 @@ video, audio {
     opacity: 1;
 }
 
+/* THE PIT STOP: DEBUG TERMINAL */
+.terminal-panel {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    margin-top: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+.terminal-header {
+    background: #111;
+    padding: 10px 15px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.terminal-header .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.dot.red { background: #ff5555; }
+.dot.yellow { background: #ffcc00; }
+.dot.green { background: #00cc66; }
+.terminal-title {
+    margin-left: 15px;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+.terminal-body {
+    padding: 30px;
+}
+.terminal-prompt {
+    font-family: var(--font-mono);
+    color: var(--accent-orange);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+.code-box {
+    width: 100%;
+    height: 120px;
+    background: #000;
+    border: 1px solid #222;
+    border-left: 3px solid var(--accent-orange);
+    color: var(--text-silver);
+    font-family: var(--font-mono);
+    padding: 15px;
+    resize: none;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+.terminal-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.btn-terminal-opt {
+    background: #111;
+    border: 1px solid #333;
+    color: var(--text-silver);
+    font-family: var(--font-mono);
+    padding: 12px 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-terminal-opt:hover {
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+}
+.btn-terminal-opt.correct {
+    background: #003300;
+    border-color: #00cc66;
+    color: #00cc66;
+}
+.btn-terminal-opt.wrong {
+    background: #330000;
+    border-color: #ff4444;
+    color: #ff4444;
+}
+.terminal-feedback {
+    margin-top: 25px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+.terminal-feedback .success { color: #00cc66; }
+.terminal-feedback .error { color: #ff4444; }
+.terminal-output {
+    text-align: center;
+    padding: 40px;
+}
+.terminal-output p {
+    font-family: var(--font-mono);
+    color: var(--text-silver);
+    margin-bottom: 10px;
+}
+.terminal-score {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--accent-orange);
+    margin: 20px 0;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -604,7 +700,6 @@ footer .footer-license {
     color: #555;
     font-size: 0.7rem;
 }
-/* Styling Tautan Lisensi */
 footer .footer-license a {
     color: #777;
     text-decoration: none;

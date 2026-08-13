@@ -44,7 +44,6 @@ const QUESTIONS_DB = [
 ];
 
 const TEAM_DB = [
-    // Hierarki 1: Dosen Pembimbing Akademik (Afiliasi UNSIA)
     { 
         nama: "Riad Sahara, S.SI, MT", 
         nim: "NIDN: 0306018902", 
@@ -56,7 +55,6 @@ const TEAM_DB = [
         foto: "assets/media/img/profiles/riad.png",
         hierarchy: 1
     },
-    // Hierarki 2: Lead Developer
     { 
         nama: "Rama Eka Yudha", 
         nim: "250401010385", 
@@ -68,7 +66,6 @@ const TEAM_DB = [
         foto: "assets/media/img/profiles/rama.png",
         hierarchy: 2
     },
-    // Hierarki 3: Anggota Tim
     { 
         nama: "Aditya Nanda", 
         nim: "250401010388", 
@@ -78,7 +75,7 @@ const TEAM_DB = [
         linkedin: "",
         github: "seinsation",
         foto: "assets/media/img/profiles/aditya.png",
-        hierarchy: 3
+        hierarchy: 2
     },
     { 
         nama: "[Nama Anggota 3]", 
@@ -89,7 +86,7 @@ const TEAM_DB = [
         linkedin: "username_linkedin",
         github: "username_gh",
         foto: "",
-        hierarchy: 3
+        hierarchy: 2
     },
     { 
         nama: "[Nama Anggota 4]", 
@@ -100,7 +97,7 @@ const TEAM_DB = [
         linkedin: "username_linkedin",
         github: "username_gh",
         foto: "",
-        hierarchy: 3
+        hierarchy: 2
     },
     { 
         nama: "[Nama Anggota 5]", 
@@ -111,6 +108,49 @@ const TEAM_DB = [
         linkedin: "username_linkedin",
         github: "username_gh",
         foto: "",
-        hierarchy: 3
+        hierarchy: 2
+    }
+];
+
+// DATABASE FITUR BARU: THE PIT STOP DEBUG TERMINAL
+const CHALLENGES_DB = [
+    {
+        id: 1,
+        title: "Logic Error: Infinite Loop",
+        code: "let lap = 0;\nwhile (lap < 10) {\n  console.log('Lap completed');\n}",
+        options: [
+            "while (lap > 10)",
+            "while (lap < 10) { lap++; }",
+            "while (lap = 10)",
+            "while (lap < 10) { lap--; }"
+        ],
+        answer: 1,
+        explanation: "FIX ACCEPTED. Variable 'lap' must be incremented to break the loop, preventing engine overheat."
+    },
+    {
+        id: 2,
+        title: "Syntax Error: Assignment vs Comparison",
+        code: "let engine = 'off';\nif (engine = 'on') {\n  igniteFuel();\n}",
+        options: [
+            "if (engine == 'on')",
+            "if (engine = 'on')",
+            "if (engine != 'on')",
+            "if (engine => 'on')"
+        ],
+        answer: 0,
+        explanation: "FIX ACCEPTED. Using single '=' assigns value instead of comparing. Use '==' or '===' to check condition."
+    },
+    {
+        id: 3,
+        title: "DOM Error: Null Reference",
+        code: "const btn = document.getElementById('startBtn');\nbtn.innerText = 'Start';",
+        options: [
+            "The script is loaded in <head> before DOM exists",
+            "innerText should be innerHTML",
+            "btn needs to be a const",
+            "getElementById should be querySelector"
+        ],
+        answer: 0,
+        explanation: "FIX ACCEPTED. If JS runs before HTML loads, 'btn' is null. Use 'defer' or place script at end of body."
     }
 ];
