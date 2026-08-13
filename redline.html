@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo">e-Ducati <span>ON</span></div>
         <div class="nav-links">
@@ -19,9 +20,11 @@
             <a href="contributor.html">Team</a>
         </div>
     </nav>
+
     <section class="container">
         <h2 class="section-title reveal">The Algorithm Redline</h2>
         <p class="reveal">Di sirkuit balap, mesin yang dipaksa melebihi batas RPM akan meledak. Di Informatika, algoritma yang tidak efisien (kompleksitas waktu tinggi) akan membuat sistem *overheat* dan lambat. Amati bagaimana Quick Sort bekerja presisi di zona hijau, sementara Bubble Sort terpaksa menembus garis merah (*Redline*).</p>
+        
         <div class="redline-grid reveal">
             <div class="cockpit-panel control-panel">
                 <h3 class="panel-title">Control Panel</h3>
@@ -57,11 +60,28 @@
             </div>
         </div>
     </section>
+
+    <!-- SYSTEM BRIEFING: EDUCATIONAL SUMMARY -->
+    <section class="container reveal">
+        <h2 class="section-title">System Briefing</h2>
+        <div class="cockpit-panel">
+            <h3 class="panel-title" style="font-size: 1.8rem; margin-bottom: 20px;">Rangkuman Edukasi: Kompleksitas Waktu (Big O Notation)</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Mengapa Quick Sort tidak menembus RPM merah, sedangkan Bubble Sort cepat overheat? Ini berkaitan dengan Struktur Data dan Algoritma:</p>
+            <ul class="directives-list">
+                <li><strong>Big O Notation:</strong* Ini adalah metrik matematis untuk mengukur efisiensi algoritma. O(n²) berarti waktu eksekusi tumbuh secara kuadratik. Jika data 10x lipat, waktu prosesnya 100x lipat lebih lambat.</li>
+                <li><strong>Bubble Sort (O(n²)):</strong> Algoritma ini membandingkan setiap elemen dengan elemen di sebelahnya secara berulang. Sangat mudah ditulis, namun mematikan performa server jika data besar. Inilah mengapa jarum RPM menembus angka merah.</li>
+                <li><strong>Quick Sort (O(n log n)):</strong> Menggunakan pendekatan "Divide and Conquer" (Pecah dan Taklukkan). Ia membagi data menjadi bagian kecil, sehingga beban komputasi jauh lebih ringan dan RPM stabil di hijau.</li>
+                <li><strong>Hardware Limit (Overheat):</strong> CPU komputer memiliki batas instruksi per detik. Menulis algoritma yang lambat sama dengan memaksa hardware bekerja di luar batas (redline), yang berujung pada sistem yang *hang* atau *crash*.</li>
+            </ul>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; <span id="currentYear">2026</span> e-Ducati ON Enterprise. UNSIA PJJ Informatika IF207.</p>
         <div class="footer-license">Licensed under <a href="license.html">Educational Open License (EOL)</a>.</div>
         <div class="footer-hashtags">#UNSIA #Informatika #PJJInformatikaUNSIA #KuliahOnline</div>
     </footer>
+
     <script src="assets/js/data.js"></script>
     <script src="assets/js/app.js"></script>
 </body>

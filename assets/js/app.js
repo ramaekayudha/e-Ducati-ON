@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initHeroAnimations() {
-        // 1. Hero Slider Frame Cycle (5 detik per frame)
         const slides = document.querySelectorAll('.slide');
         if (slides.length > 0) {
             let slideIndex = 0;
@@ -75,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // 2. Slow Statistics Counter
         const statNum = document.querySelector('.stat-num');
         if(statNum) {
             let count = 0;
@@ -101,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(item.semester !== currentSemester) {
                     currentSemester = item.semester;
                     tableBody.innerHTML += `
-                        <tr style="background: #000;">
+                        <tr style="background: #000);">
                             <td colspan="6" style="color: var(--accent-orange); font-family: var(--font-display); font-size: 1.5rem; padding: 20px 15px;">
                                 SEMESTER ${currentSemester} <span style="color: var(--text-muted); font-size: 0.9rem; font-family: var(--font-mono);">| T.A ${item.tahun_ajaran} | (${item.status})</span>
                             </td>
@@ -259,7 +257,6 @@ document.addEventListener('DOMContentLoaded', () => {
         treeHTML += `</div>`;
         contributorGrid.innerHTML = treeHTML;
         
-        // Re-observe dynamically added elements
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         document.querySelectorAll('.flip-card').forEach(card => {
@@ -321,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderChallenge();
     }
 
-    // 10. THE ALGORITHM REDLINE VISUALIZER LOGIC (BUG FIXED)
+    // 10. THE ALGORITHM REDLINE VISUALIZER LOGIC
     const startRedlineBtn = document.getElementById('startRedline');
     if (startRedlineBtn) {
         let array = [];
@@ -340,9 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function generateArray(size) {
             array = [];
-            for(let i=0; i<size; i++) {
-                array.push(Math.floor(Math.random() * 100) + 10);
-            }
+            for(let i=0; i<size; i++) { array.push(Math.floor(Math.random() * 100) + 10); }
             renderBars();
         }
 
@@ -354,11 +349,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const bar = document.createElement('div');
                 bar.classList.add('array-bar');
                 bar.style.height = `${(val / maxHeight) * 100}%`;
-                if (idx === activeIdx1 || idx === activeIdx2) {
-                    bar.classList.add('active');
-                } else if (sortedIdxs.includes(idx)) {
-                    bar.classList.add('sorted');
-                }
+                if (idx === activeIdx1 || idx === activeIdx2) { bar.classList.add('active'); } 
+                else if (sortedIdxs.includes(idx)) { bar.classList.add('sorted'); }
                 barContainer.appendChild(bar);
             });
         }
@@ -369,7 +361,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if(rpmNeedle) rpmNeedle.style.transform = `rotate(${rotation}deg)`;
             if(rpmValue) rpmValue.innerText = Math.floor(rpm);
             if(opsValue) opsValue.innerText = comparisons;
-            
             if (rpm > 6500) {
                 if(rpmNeedle) rpmNeedle.style.background = '#ff4444';
                 if(rpmNeedle) rpmNeedle.style.boxShadow = '0 0 15px #ff4444';
@@ -413,9 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!isSorting) return;
                     comparisons++;
                     updateGauge();
-                    if (array[j] < array[minIdx]) {
-                        minIdx = j;
-                    }
+                    if (array[j] < array[minIdx]) { minIdx = j; }
                     renderBars(i, minIdx, sortedIdxs);
                     await sleep(20);
                 }
@@ -473,15 +462,12 @@ document.addEventListener('DOMContentLoaded', () => {
             startRedlineBtn.disabled = true;
             algoSelect.disabled = true;
             sizeSlider.disabled = true;
-
             const algo = algoSelect.value;
             if (algo === 'bubble') await bubbleSort();
             else if (algo === 'selection') await selectionSort();
             else if (algo === 'quick') await quickSort(0, array.length - 1);
-
             isSorting = false;
             startRedlineBtn.innerText = "Sequence Complete";
-            
             setTimeout(() => {
                 comparisons = 0;
                 updateGauge();
@@ -514,5 +500,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         generateArray(parseInt(sizeSlider.value));
         updateGauge();
+    }
+
+    // 11. KNOWLEDGE BASE / LIBRARY RENDER LOGIC
+    const libraryGrid = document.getElementById('libraryGrid');
+    if(libraryGrid) {
+        LIBRARY_DB.forEach(item => {
+            libraryGrid.innerHTML += `
+                <a href="${item.link}" target="_blank" class="library-card reveal">
+                    <span class="lib-category">${item.category}</span>
+                    <h4 class="lib-title">${item.title}</h4>
+                    <p class="lib-author">by ${item.author}</p>
+                    <p class="lib-desc">${item.description}</p>
+                </a>
+            `;
+        });
+        // Re-observe newly added items
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }
 });

@@ -112,7 +112,6 @@ const TEAM_DB = [
     }
 ];
 
-// DATABASE FITUR BARU: THE PIT STOP DEBUG TERMINAL
 const CHALLENGES_DB = [
     {
         id: 1,
@@ -152,5 +151,51 @@ const CHALLENGES_DB = [
         ],
         answer: 0,
         explanation: "FIX ACCEPTED. If JS runs before HTML loads, 'btn' is null. Use 'defer' or place script at end of body."
+    }
+];
+
+// DATABASE FITUR BARU: KNOWLEDGE BASE / LIBRARY
+const LIBRARY_DB = [
+    { 
+        title: "MDN Web Docs", 
+        author: "Mozilla Developer Network", 
+        category: "Web Development", 
+        description: "Dokumentasi resmi HTML, CSS, dan JavaScript. Fondasi mutlak bagi mahasiswa Pemrograman Web I.", 
+        link: "https://developer.mozilla.org/" 
+    },
+    { 
+        title: "Introduction to Algorithms", 
+        author: "Thomas H. Cormen", 
+        category: "Struktur Data & Algoritma", 
+        description: "Buku suci (CLRS) dasar algoritma sorting, Big O Notation, dan kompleksitas waktu.", 
+        link: "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/" 
+    },
+    { 
+        title: "Clean Code", 
+        author: "Robert C. Martin", 
+        category: "Software Engineering", 
+        description: "Panduan menulis kode yang mudah dibaca, di-refactor, dan dipelihara. Estetika dalam pemrograman.", 
+        link: "https://www.oreilly.com/library/view/clean-code/9780136083238/" 
+    },
+    { 
+        title: "W3Schools Online Web Tutorials", 
+        author: "Refnes Data", 
+        category: "Web Development", 
+        description: "Platform interaktif untuk belajar sintaks dasar web dengan Try-It-Yourself editor.", 
+        link: "https://www.w3schools.com/" 
+    },
+    { 
+        title: "Database System Concepts", 
+        author: "Silberschatz, Korth, Sudarshan", 
+        category: "Sistem Basis Data", 
+        description: "Memahami normalisasi, ERD, query SQL, dan manajemen transaksi database relasional.", 
+        link: "https://www.db-book.com/" 
+    },
+    { 
+        title: "Calculus: Early Transcendentals", 
+        author: "James Stewart", 
+        category: "Matematika", 
+        description: "Buku rujukan standar untuk limit, turunan, dan integral yang applicative di Informatika.", 
+        link: "https://www.stewartcalculus.com/" 
     }
 ];

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo">e-Ducati <span>ON</span></div>
         <div class="nav-links">
@@ -19,28 +20,72 @@
             <a href="contributor.html">Team</a>
         </div>
     </nav>
+
+    <!-- 1. ENTERPRISE MEDIA HUB (LOCAL FILES - WAJIB UAS) -->
     <section class="container">
         <h2 class="section-title reveal">Enterprise Media Hub</h2>
         <p class="reveal">Akses langsung ke arsip visual dan audio e-Ducati ON. Tekan play untuk menghubungkan sistem.</p>
-        <div class="media-grid">
-            <div class="media-panel reveal">
+        
+        <!-- PENYESUAIAN: Layout diubah menjadi vertikal (atas-bawah) -->
+        <div class="media-stack-grid">
+            <!-- Video Panel (Lokal - Atas) -->
+            <div class="media-video-panel reveal">
                 <h3 class="media-title">Ignition Sequence</h3>
-                <video controls preload="metadata" poster="assets/media/img/Late Night Logic.png" style="border: 1px solid #333;">
-                    <source src="assets/media/video/intro.mp4" type="video/mp4">
-                    Browser Anda tidak mendukung tag video.
-                </video>
+                <div class="video-wrapper">
+                    <video controls preload="metadata" poster="assets/media/img/Late Night Logic.png">
+                        <source src="assets/media/video/intro.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung tag video.
+                    </video>
+                </div>
                 <p style="margin-top: 15px; color: var(--text-muted); font-size: 0.9rem;">Video sinematik pengantar mesin performa tinggi Informatika.</p>
             </div>
-            <div class="media-panel reveal">
+            
+            <!-- Audio Panel (Lokal - Bawah) -->
+            <div class="media-audio-panel reveal">
                 <h3 class="media-title">System Monologue</h3>
-                <audio controls preload="metadata" style="margin-top: 15px;">
+                <audio controls preload="metadata" style="width: 100%; margin-top: 10px;">
                     <source src="assets/media/audio/podcast.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung tag audio.
                 </audio>
-                <p style="margin-top: 15px; color: var(--text-muted); font-size: 0.9rem;">Podcast audio: Mentalitas hardcore seorang arsitek kode.</p>
+                <p style="margin-top: 15px; color: var(--text-muted); font-size: 0.8rem;">Podcast audio: Mentalitas hardcore seorang arsitek kode.</p>
             </div>
         </div>
     </section>
+
+    <!-- 2. EXTERNAL LEARNING MATERIALS (YOUTUBE VIDEO ONLY) -->
+    <section class="container">
+        <h2 class="section-title reveal">External Learning Materials</h2>
+        <p class="reveal">Materi pembelajaran tambahan dari sumber eksternal terpercaya.</p>
+        
+        <div class="media-stack-grid">
+            <!-- Video YouTube (Atas) -->
+            <div class="media-video-panel reveal">
+                <h3 class="media-title">Konsep Logika & Pemrograman</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/vdL1m1l92X8" title="Konsep Logika dan Pemrograman" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <p style="margin-top: 15px; color: var(--text-muted); font-size: 0.9rem;">Sumber: Channel YouTube <a href="https://www.youtube.com/@janganpulangsekalian" target="_blank" style="color: var(--accent-orange); text-decoration: none;">Riad Sahara</a></p>
+            </div>
+            
+            <!-- Text Panel (Bawah) -->
+            <div class="media-audio-panel reveal" style="justify-content: center; align-items: flex-start;">
+                <h3 class="media-title">Lecture Notes</h3>
+                <p style="color: var(--text-silver); font-size: 0.9rem; margin-bottom: 15px;">Materi ini membahas konsep dasar logika pemrograman yang menjadi fondasi mutlak dalam mata kuliah Pemrograman Web I.</p>
+                <p style="color: var(--text-muted); font-size: 0.8rem;">Disarankan untuk mencatat poin-poin penting terkait alur logika (flow) dan struktur kode sebelum melanjutkan ke modul praktikum di halaman Pit Stop.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. THE KNOWLEDGE BASE (LIBRARY) -->
+    <section class="container">
+        <h2 class="section-title reveal">The Knowledge Base</h2>
+        <p class="reveal">Perpustakaan referensi inti. Di balik kecepatan mesin, ada fondasi teori yang harus dikuasai. Klik kartu untuk membuka sumber bacaan.</p>
+        <div class="library-grid" id="libraryGrid">
+            <!-- Kartu perpustakaan otomatis dirender oleh app.js -->
+        </div>
+    </section>
+
+    <!-- 4. THE ARCHITECT'S GALLERY -->
     <section class="container">
         <h2 class="section-title reveal">The Architect's Gallery</h2>
         <p class="reveal">Tangkapan layar momen di balik layar. Ini adalah habitat di mana logika dirakit. Hover gambar untuk melihat detailnya.</p>
@@ -53,11 +98,13 @@
             <div class="gallery-item reveal"><img src="assets/media/img/Data Visualization.png" alt="Data Visualization"><div class="gallery-caption">Data Visualization</div></div>
         </div>
     </section>
+
     <footer>
         <p>&copy; <span id="currentYear">2026</span> e-Ducati ON Enterprise. UNSIA PJJ Informatika IF207.</p>
         <div class="footer-license">Licensed under <a href="license.html">Educational Open License (EOL)</a>.</div>
         <div class="footer-hashtags">#UNSIA #Informatika #PJJInformatikaUNSIA #KuliahOnline</div>
     </footer>
+
     <script src="assets/js/data.js"></script>
     <script src="assets/js/app.js"></script>
 </body>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo">e-Ducati <span>ON</span></div>
         <div class="nav-links">
@@ -19,16 +20,34 @@
             <a href="contributor.html">Team</a>
         </div>
     </nav>
+
     <section class="container">
         <h2 class="section-title reveal">The Pit Stop: Debug Terminal</h2>
         <p class="reveal">Sistem mengalami malfungsi. Identifikasi kesalahan sintaks dan logika pada potongan kode di bawah ini. Pilih tindakan perbaikan yang tepat untuk memulai kembali mesin.</p>
         <div class="terminal-panel reveal" id="pitstopContainer"></div>
     </section>
+
+    <!-- SYSTEM BRIEFING: EDUCATIONAL SUMMARY -->
+    <section class="container reveal">
+        <h2 class="section-title">System Briefing</h2>
+        <div class="cockpit-panel">
+            <h3 class="panel-title" style="font-size: 1.8rem; margin-bottom: 20px;">Rangkuman Edukasi: Logika Debugging</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Mengapa sebuah kode bisa mogok (stall) seperti mesin yang rusak? Berikut adalah dasar-dasar kesalahan kode (bug) di Informatika:</p>
+            <ul class="directives-list">
+                <li><strong>Infinite Loop:</strong* Kesalahan logika di mana kondisi penghentian (terminasi) tidak pernah tercapai. Sistem akan terus berputar tanpa henti hingga memori habis (Stack Overflow).</li>
+                <li><strong>Assignment (=) vs Comparison (==):</strong> Kesalahan sintaks umum. Tanda samadengan tunggal (=) digunakan untuk memberi nilai variabel, sedangkan ganda (==) digunakan untuk membandingkan kondisi di dalam if-statement.</li>
+                <li><strong>Null Reference (DOM Error):</strong> Dalam Pemrograman Web I, JavaScript sering berjalan sebelum elemen HTML selesai dimuat. Ini menyebabkan variabel bernilai *null*. Gunakan atribut `defer` atau letakkan script di akhir body.</li>
+                <li><strong>Pit Stop Mentality:</strong> Debugger yang baik tidak asal menebar `console.log()`. Ia membaca pesan error, melacak baris error, dan membedah akar masalah. Ini adalah skill fundamental seorang arsitek kode.</li>
+            </ul>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; <span id="currentYear">2026</span> e-Ducati ON Enterprise. UNSIA PJJ Informatika IF207.</p>
         <div class="footer-license">Licensed under <a href="license.html">Educational Open License (EOL)</a>.</div>
         <div class="footer-hashtags">#UNSIA #Informatika #PJJInformatikaUNSIA #KuliahOnline</div>
     </footer>
+
     <script src="assets/js/data.js"></script>
     <script src="assets/js/app.js"></script>
 </body>

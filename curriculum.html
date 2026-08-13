@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum Matrix - e-Ducati ON</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .krs-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+    </style>
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo">e-Ducati <span>ON</span></div>
         <div class="nav-links">
@@ -19,6 +27,7 @@
             <a href="contributor.html">Team</a>
         </div>
     </nav>
+
     <section class="container reveal">
         <h2 class="section-title">The Matrix: KRS Blueprint</h2>
         <p>Spesifikasi mesin Anda. Total SKS yang sudah diambil (Terunci/Locked): <strong id="totalSks" style="color:var(--accent-orange);"></strong></p>
@@ -29,11 +38,12 @@
             </table>
         </div>
     </section>
+
     <section class="container reveal">
         <h2 class="section-title">Future KRS Planner</h2>
         <p>Rancang masa depan akademik Anda. Tambahkan mata kuliah untuk semester mendatang. <em>(Catatan: Penambahan ini tidak akan mempengaruhi perhitungan IPK Semester 1)</em></p>
         <form id="krsForm" class="cockpit-panel" style="margin-top: 30px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="krs-form-grid">
                 <div class="form-group"><label>Nama Mata Kuliah</label><input type="text" id="matkulInput" placeholder="cth: Pemrograman Web II" required></div>
                 <div class="form-group"><label>Dosen Pengampu</label><input type="text" id="dosenInput" placeholder="cth: Riad Sahara, S.SI, MT" required></div>
                 <div class="form-group"><label>Jumlah SKS</label><select id="sksInput" required><option value="2">2 SKS</option><option value="3">3 SKS</option><option value="4">4 SKS</option></select></div>
@@ -44,11 +54,13 @@
             <button type="submit" class="btn-primary">Tambahkan ke KRS</button>
         </form>
     </section>
+
     <section class="container reveal">
         <h2 class="section-title">Statistical Difficulty Map</h2>
         <p>Visualisasi data tingkat kesulitan prediktif mahasiswa sebelumnya.</p>
         <div class="chart-container" id="statsChart"></div>
     </section>
+
     <section class="container reveal">
         <h2 class="section-title">IPK Target Simulator</h2>
         <p>Prediksi target IPK Anda berdasarkan nilai yang dipilih. (Sistem terkunci, hanya memproses 19 SKS Semester 1).</p>
@@ -61,16 +73,34 @@
             </div>
         </div>
     </section>
+
     <section class="humanist-section reveal">
         <h2 class="section-title" style="border: none; padding: 0; font-size: 3rem; margin-bottom: 40px;">The Human Blueprint</h2>
         <p class="humanist-quote">"Teknologi yang hebat bukan hanya tentang logika mesin yang dingin, melainkan tentang bagaimana mesin itu menyentuh kemanusiaan. Estetika Humanisme mengajarkan kita bahwa <mark style="background: transparent; color: var(--accent-orange); border-bottom: 1px solid var(--accent-orange);">kode yang baik adalah kode yang memahami manusia.</mark>"</p>
         <p class="humanist-author">- Refleksi dari Mata Kuliah Estetika Humanisme (2 SKS)</p>
     </section>
+
+    <!-- SYSTEM BRIEFING: EDUCATIONAL SUMMARY -->
+    <section class="container reveal">
+        <h2 class="section-title">System Briefing</h2>
+        <div class="cockpit-panel">
+            <h3 class="panel-title" style="font-size: 1.8rem; margin-bottom: 20px;">Rangkuman Edukasi: Manajemen KRS & IPK</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Mengapa perhitungan IPK simulator dikunci rapat pada Semester 1? Berikut adalah logika akademisnya:</p>
+            <ul class="directives-list">
+                <li><strong>Sistem Basis Data:</strong> Konsep "Locked IPK" merepresentasikan integritas data. Data masa lalu (nilai yang sudah masuk) tidak boleh diubah secara sembarangan oleh transaksi baru (input KRS future).</li>
+                <li><strong>Kalkulus & Statistika:</strong> Perhitungan IPK menggunakan rumus matematis murni (Total Nilai x Total SKS) / Total SKS. Presisi angka di sini melatih disiplin numerik Anda.</li>
+                <li><strong>Algoritma (DOM Manipulation):</strong> Fitur Future KRS Planner membuktikan bahwa kita bisa menambahkan baris baru ke dalam tabel HTML secara real-time tanpa me-refresh halaman (manipulasi Array & DOM).</li>
+                <li><strong>Perencanaan Akademik:</strong> Mahasiswa Informatika dituntut untuk berpikir sistemik. Merencanakan mata kuliah semester depan adalah bentuk penerapan algoritma *predictive branching* dalam kehidupan nyata.</li>
+            </ul>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; <span id="currentYear">2026</span> e-Ducati ON Enterprise. UNSIA PJJ Informatika IF207.</p>
         <div class="footer-license">Licensed under <a href="license.html">Educational Open License (EOL)</a>.</div>
         <div class="footer-hashtags">#UNSIA #Informatika #PJJInformatikaUNSIA #KuliahOnline</div>
     </footer>
+
     <script src="assets/js/data.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/math.js"></script>
