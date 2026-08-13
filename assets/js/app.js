@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
             let totalSksTaken = 0;
             let currentSemester = 0;
             
-            // Sort berdasarkan semester agar urut
             const sortedDB = [...CURRICULUM_DB].sort((a,b) => a.semester - b.semester);
             
             sortedDB.forEach(item => {
@@ -111,10 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             CURRICULUM_DB.push(newCourse);
-            renderCurriculumTable(); // Render ulang tabel
+            renderCurriculumTable();
             krsForm.reset();
             
-            // Feedback visual
             const btn = krsForm.querySelector('button[type="submit"]');
             btn.innerText = "Mata Kuliah Ditambahkan!";
             btn.style.background = "#FF5400";
@@ -218,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 8. Render Contributor Cards
+    // 8. Render Contributor Cards dengan Social Links
     const contributorGrid = document.getElementById('contributorGrid');
     if(contributorGrid) {
         TEAM_DB.forEach(member => {
@@ -230,8 +228,14 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p style="color: var(--text-muted); font-size: 0.8rem;">(Hover to Reveal)</p>
                         </div>
                         <div class="flip-card-back">
-                            <p style="color: var(--accent-orange); font-family: var(--font-display); font-size: 2rem;">${member.nim}</p>
-                            <p style="margin-top: 10px;">${member.peran}</p>
+                            <p style="color: var(--accent-orange); font-family: var(--font-display); font-size: 1.5rem;">${member.nim}</p>
+                            <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--text-silver);">${member.peran}</p>
+                            <div class="social-links">
+                                <a href="mailto:${member.email}" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                                <a href="https://instagram.com/${member.instagram}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://linkedin.com/in/${member.linkedin}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/${member.github}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>

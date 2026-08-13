@@ -1,6 +1,5 @@
 // E-DUCATI ON ENTERPRISE - DATA LAYER (FULL)
 
-// Data awal hanya berisi Semester 1 (Taken). Semester mendatang akan diisi via Form.
 const CURRICULUM_DB = [
     { kode: "200002101", matkul: "Pendidikan Pancasila", sks: 2, dosen: "Hj. Trayanti Wisalina, A.Md., S.S., M.Si", kategori: "Humanis", tahun_ajaran: "2025/2026", semester: 1, status: "Taken" },
     { kode: "200002106", matkul: "Estetika Humanisme", sks: 2, dosen: "Lia Amelia Nurkhazanah, S.Pd., M.Hum", kategori: "Humanis", tahun_ajaran: "2025/2026", semester: 1, status: "Taken" },
@@ -45,9 +44,49 @@ const QUESTIONS_DB = [
 ];
 
 const TEAM_DB = [
-    { nama: "Rama Eka Yudha", nim: "250401010385", peran: "Lead Developer & Arsitek" },
-    { nama: "Aditya Nanda", nim: "250401010388", peran: "UI/UX Designer" },
-    { nama: "[Nama Anggota 3]", nim: "[NIM]", peran: "Algorithm Specialist" },
-    { nama: "[Nama Anggota 4]", nim: "[NIM]", peran: "Database Engineer" },
-    { nama: "[Nama Anggota 5]", nim: "[NIM]", peran: "Documentation & Testing" }
+    { 
+        nama: "Rama Eka Yudha", 
+        nim: "250401010385", 
+        peran: "Lead Developer & Arsitek",
+        email: "250401010385@mhs.unsia.ac.id",
+        instagram: "ramaekayudha",
+        linkedin: "ramaekayudha",
+        github: "ramaekayudha"
+    },
+    { 
+        nama: "[Nama Anggota 2]", 
+        nim: "[NIM]", 
+        peran: "UI/UX Designer",
+        email: "email@mhs.unsia.ac.id",
+        instagram: "username_ig",
+        linkedin: "username_linkedin",
+        github: "username_gh"
+    },
+    { 
+        nama: "[Nama Anggota 3]", 
+        nim: "[NIM]", 
+        peran: "Algorithm Specialist",
+        email: "email@mhs.unsia.ac.id",
+        instagram: "username_ig",
+        linkedin: "username_linkedin",
+        github: "username_gh"
+    },
+    { 
+        nama: "[Nama Anggota 4]", 
+        nim: "[NIM]", 
+        peran: "Database Engineer",
+        email: "email@mhs.unsia.ac.id",
+        instagram: "username_ig",
+        linkedin: "username_linkedin",
+        github: "username_gh"
+    },
+    { 
+        nama: "[Nama Anggota 5]", 
+        nim: "[NIM]", 
+        peran: "Documentation & Testing",
+        email: "email@mhs.unsia.ac.id",
+        instagram: "username_ig",
+        linkedin: "username_linkedin",
+        github: "username_gh"
+    }
 ];
