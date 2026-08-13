@@ -51,16 +51,18 @@ const TEAM_DB = [
         email: "250401010385@mhs.unsia.ac.id",
         instagram: "ramaekayudha",
         linkedin: "ramaekayudha",
-        github: "ramaekayudha"
+        github: "ramaekayudha",
+        foto: "assets/media/img/profiles/rama.png" //FORMAT PNG
     },
     { 
-        nama: "[Nama Anggota 2]", 
-        nim: "[NIM]", 
+        nama: "Aditya Nanda", 
+        nim: "250401010388", 
         peran: "UI/UX Designer",
-        email: "email@mhs.unsia.ac.id",
+        email: "250401010388.aditya@mhs.unsia.ac.id",
         instagram: "username_ig",
         linkedin: "username_linkedin",
-        github: "username_gh"
+        github: "seinsation",
+        foto: "" // KOSONG = AVATAR OTOMATIS
     },
     { 
         nama: "[Nama Anggota 3]", 
@@ -69,7 +71,8 @@ const TEAM_DB = [
         email: "email@mhs.unsia.ac.id",
         instagram: "username_ig",
         linkedin: "username_linkedin",
-        github: "username_gh"
+        github: "username_gh",
+        foto: ""
     },
     { 
         nama: "[Nama Anggota 4]", 
@@ -78,7 +81,8 @@ const TEAM_DB = [
         email: "email@mhs.unsia.ac.id",
         instagram: "username_ig",
         linkedin: "username_linkedin",
-        github: "username_gh"
+        github: "username_gh",
+        foto: ""
     },
     { 
         nama: "[Nama Anggota 5]", 
@@ -87,6 +91,7 @@ const TEAM_DB = [
         email: "email@mhs.unsia.ac.id",
         instagram: "username_ig",
         linkedin: "username_linkedin",
-        github: "username_gh"
+        github: "username_gh",
+        foto: ""
     }
 ];

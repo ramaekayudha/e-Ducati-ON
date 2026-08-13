@@ -216,14 +216,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 8. Render Contributor Cards dengan Social Links
+    // 8. Render Contributor Cards dengan Foto/Avatar & Social Links
     const contributorGrid = document.getElementById('contributorGrid');
     if(contributorGrid) {
         TEAM_DB.forEach(member => {
+            // Logika Fallback: Jika foto kosong, tampilkan avatar
+            const photoHTML = member.foto 
+                ? `<img src="${member.foto}" alt="${member.nama}" class="profile-img">` 
+                : `<div class="avatar-placeholder"><i class="fas fa-user-secret"></i></div>`;
+
             contributorGrid.innerHTML += `
                 <div class="flip-card reveal">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
+                            ${photoHTML}
                             <h3>${member.nama}</h3>
                             <p style="color: var(--text-muted); font-size: 0.8rem;">(Hover to Reveal)</p>
                         </div>

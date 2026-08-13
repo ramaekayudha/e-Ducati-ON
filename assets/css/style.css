@@ -301,7 +301,7 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
 }
 .humanist-author { color: var(--accent-orange); font-family: var(--font-mono); }
 
-/* 3D FLIP CARDS & SOCIAL LINKS */
+/* 3D FLIP CARDS, PHOTOS & SOCIAL LINKS */
 .flip-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -344,8 +344,38 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     background-color: #1a1a1a;
     transform: rotateY(180deg);
 }
-.flip-card-front h3 { color: var(--accent-orange); font-family: var(--font-display); font-size: 2rem; }
+.flip-card-front h3 { color: var(--accent-orange); font-family: var(--font-display); font-size: 1.8rem; margin-top: 15px; }
 .flip-card-back p { color: var(--text-silver); font-family: var(--font-mono); font-size: 0.9rem; }
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-orange);
+    margin-bottom: 5px;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+.flip-card:hover .profile-img {
+    filter: grayscale(0%);
+}
+
+.avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    border: 2px solid #444;
+}
+.avatar-placeholder i {
+    font-size: 3rem;
+    color: var(--text-muted);
+}
 
 .social-links {
     display: flex;
