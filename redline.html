@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Algorithm Redline - e-Ducati ON</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">e-Ducati <span>ON</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="assessment.html">Assessment</a>
+            <a href="curriculum.html">Curriculum</a>
+            <a href="redline.html">Redline</a>
+            <a href="pitstop.html">Pit Stop</a>
+            <a href="media.html">Media</a>
+            <a href="contributor.html">Team</a>
+        </div>
+    </nav>
+    <section class="container">
+        <h2 class="section-title reveal">The Algorithm Redline</h2>
+        <p class="reveal">Di sirkuit balap, mesin yang dipaksa melebihi batas RPM akan meledak. Di Informatika, algoritma yang tidak efisien (kompleksitas waktu tinggi) akan membuat sistem *overheat* dan lambat. Amati bagaimana Quick Sort bekerja presisi di zona hijau, sementara Bubble Sort terpaksa menembus garis merah (*Redline*).</p>
+        <div class="redline-grid reveal">
+            <div class="cockpit-panel control-panel">
+                <h3 class="panel-title">Control Panel</h3>
+                <div class="form-group">
+                    <label>Pilih Algoritma:</label>
+                    <select id="algoSelect">
+                        <option value="quick">Quick Sort (O(n log n))</option>
+                        <option value="selection">Selection Sort (O(n²))</option>
+                        <option value="bubble">Bubble Sort (O(n²))</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Jumlah Data (n): <span id="sizeValue">30</span></label>
+                    <input type="range" id="sizeSlider" min="10" max="60" value="30">
+                </div>
+                <div class="btn-group" style="margin-top: 0; gap: 10px;">
+                    <button id="startRedline" class="btn-primary">Ignite Sequence</button>
+                    <button id="resetRedline" class="btn-secondary">Reset Data</button>
+                </div>
+            </div>
+            <div class="visualizer-panel">
+                <div class="gauge-container">
+                    <div class="gauge-track">
+                        <div class="gauge-needle" id="rpmNeedle"></div>
+                        <div class="gauge-center"></div>
+                    </div>
+                    <div class="gauge-stats">
+                        <span id="rpmValue">0</span> RPM<br>
+                        <small style="color: var(--text-muted); font-size: 0.8rem;"><span id="opsValue">0</span> Operations</small>
+                    </div>
+                </div>
+                <div class="bar-container" id="barContainer"></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; <span id="currentYear">2026</span> e-Ducati ON Enterprise. UNSIA PJJ Informatika IF207.</p>
+        <div class="footer-license">Licensed under <a href="license.html">Educational Open License (EOL)</a>.</div>
+        <div class="footer-hashtags">#UNSIA #Informatika #PJJInformatikaUNSIA #KuliahOnline</div>
+    </footer>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

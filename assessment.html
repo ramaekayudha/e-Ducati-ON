@@ -7,36 +7,30 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
     <nav class="navbar">
         <div class="logo">e-Ducati <span>ON</span></div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="assessment.html">Assessment</a>
             <a href="curriculum.html">Curriculum</a>
+            <a href="redline.html">Redline</a>
             <a href="pitstop.html">Pit Stop</a>
             <a href="media.html">Media</a>
             <a href="contributor.html">Team</a>
         </div>
     </nav>
-
     <section class="container reveal">
         <h2 class="section-title">Informatika Readiness Assessment</h2>
         <p>Jawab pertanyaan berikut dengan jujur. Sistem akan menganalisis kelayakan Anda. (Soal diacak dari bank 20 pertanyaan).</p>
-
         <div class="cockpit-panel" style="margin-top: 40px;">
             <form id="assessmentForm">
-                <div id="questionContainer">
-                    <!-- Soal acak dirender oleh app.js -->
-                </div>
-
+                <div id="questionContainer"></div>
                 <div class="btn-group">
                     <button type="submit" class="btn-primary">Eksekusi Prediksi</button>
                     <button type="button" id="regenerateBtn" class="btn-secondary">Regenerate Soal</button>
                     <a href="index.html" class="btn-secondary">Give Up (Menyerah)</a>
                 </div>
             </form>
-
             <div id="resultBox" class="result-box">
                 <h3 id="resultCategory" style="font-family: var(--font-display); font-size: 4rem; color: var(--accent-orange);"></h3>
                 <h1 id="resultPercentage" style="font-family: var(--font-mono); font-size: 3rem;"></h1>
@@ -44,13 +38,11 @@
             </div>
         </div>
     </section>
-
     <footer>
         <p>&copy; <span id="currentYear">2026</span> e-Ducati ON Enterprise. UNSIA PJJ Informatika IF207.</p>
         <div class="footer-license">Licensed under <a href="license.html">Educational Open License (EOL)</a>.</div>
         <div class="footer-hashtags">#UNSIA #Informatika #PJJInformatikaUNSIA #KuliahOnline</div>
     </footer>
-
     <script src="assets/js/data.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
