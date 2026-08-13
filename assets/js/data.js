@@ -44,6 +44,19 @@ const QUESTIONS_DB = [
 ];
 
 const TEAM_DB = [
+    // Hierarki 1: Dosen Pembimbing Akademik (Afiliasi UNSIA)
+    { 
+        nama: "Riad Sahara, S.SI, MT", 
+        nim: "NIDN: 0306018902", 
+        peran: "Dosen Pembimbing Akademik (UNSIA)",
+        email: "riad.sahara@acu.ac.id",
+        instagram: "",
+        linkedin: "riadsahara",
+        github: "",
+        foto: "assets/media/img/profiles/riad.png",
+        hierarchy: 1
+    },
+    // Hierarki 2: Lead Developer
     { 
         nama: "Rama Eka Yudha", 
         nim: "250401010385", 
@@ -52,17 +65,20 @@ const TEAM_DB = [
         instagram: "ramaekayudha",
         linkedin: "ramaekayudha",
         github: "ramaekayudha",
-        foto: "assets/media/img/profiles/rama.png" //FORMAT PNG
+        foto: "assets/media/img/profiles/rama.png",
+        hierarchy: 2
     },
+    // Hierarki 3: Anggota Tim
     { 
         nama: "Aditya Nanda", 
         nim: "250401010388", 
-        peran: "UI/UX Designer",
+        peran: "Full Stack Developer",
         email: "250401010388.aditya@mhs.unsia.ac.id",
-        instagram: "username_ig",
-        linkedin: "username_linkedin",
+        instagram: "",
+        linkedin: "",
         github: "seinsation",
-        foto: "" // KOSONG = AVATAR OTOMATIS
+        foto: "assets/media/img/profiles/aditya.png",
+        hierarchy: 3
     },
     { 
         nama: "[Nama Anggota 3]", 
@@ -72,7 +88,8 @@ const TEAM_DB = [
         instagram: "username_ig",
         linkedin: "username_linkedin",
         github: "username_gh",
-        foto: ""
+        foto: "",
+        hierarchy: 3
     },
     { 
         nama: "[Nama Anggota 4]", 
@@ -82,7 +99,8 @@ const TEAM_DB = [
         instagram: "username_ig",
         linkedin: "username_linkedin",
         github: "username_gh",
-        foto: ""
+        foto: "",
+        hierarchy: 3
     },
     { 
         nama: "[Nama Anggota 5]", 
@@ -92,6 +110,7 @@ const TEAM_DB = [
         instagram: "username_ig",
         linkedin: "username_linkedin",
         github: "username_gh",
-        foto: ""
+        foto: "",
+        hierarchy: 3
     }
 ];

@@ -216,37 +216,86 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 8. Render Contributor Cards dengan Foto/Avatar & Social Links
+    // 8. Render Contributor Tree (Vertikal Flowchart)
     const contributorGrid = document.getElementById('contributorGrid');
     if(contributorGrid) {
-        TEAM_DB.forEach(member => {
-            // Logika Fallback: Jika foto kosong, tampilkan avatar
-            const photoHTML = member.foto 
-                ? `<img src="${member.foto}" alt="${member.nama}" class="profile-img">` 
-                : `<div class="avatar-placeholder"><i class="fas fa-user-secret"></i></div>`;
+        
+        // Fungsi pembuat kartu individual
+        function renderCard(member) {
+            const photoFrontHTML = member.foto 
+                ? `<img src="${member.foto}" alt="${member.nama}" class="profile-img-front">` 
+                : `<div class="avatar-placeholder-front"><i class="fas fa-user-secret"></i></div>`;
 
-            contributorGrid.innerHTML += `
+            const photoBackHTML = member.foto 
+                ? `<img src="${member.foto}" alt="${member.nama}" class="profile-img-back">` 
+                : `<div class="avatar-placeholder-back"><i class="fas fa-user-secret"></i></div>`;
+
+            let socialHTML = '';
+            if (member.email) socialHTML += `<a href="mailto:${member.email}" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>`;
+            if (member.instagram) socialHTML += `<a href="https://instagram.com/${member.instagram}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>`;
+            if (member.linkedin) socialHTML += `<a href="https://linkedin.com/in/${member.linkedin}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>`;
+            if (member.github) socialHTML += `<a href="https://github.com/${member.github}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>`;
+
+            return `
                 <div class="flip-card reveal">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            ${photoHTML}
-                            <h3>${member.nama}</h3>
-                            <p style="color: var(--text-muted); font-size: 0.8rem;">(Hover to Reveal)</p>
+                            ${photoFrontHTML}
+                            <h3 style="color: var(--text-silver); font-size: 1.2rem; text-align: center;">${member.nama}</h3>
+                            <p style="color: var(--text-muted); font-size: 0.7rem; margin-top: 5px;">(Click to Reveal)</p>
                         </div>
                         <div class="flip-card-back">
-                            <p style="color: var(--accent-orange); font-family: var(--font-display); font-size: 1.5rem;">${member.nim}</p>
-                            <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--text-silver);">${member.peran}</p>
+                            ${photoBackHTML}
+                            <h3>${member.nama}</h3>
+                            <p style="color: var(--accent-orange); font-family: var(--font-mono); font-size: 0.8rem;">${member.nim}</p>
+                            <p style="font-size: 0.8rem; color: var(--text-silver); margin-top: 5px;">${member.peran}</p>
                             <div class="social-links">
-                                <a href="mailto:${member.email}" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
-                                <a href="https://instagram.com/${member.instagram}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://linkedin.com/in/${member.linkedin}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                                <a href="https://github.com/${member.github}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                                ${socialHTML}
                             </div>
                         </div>
                     </div>
                 </div>
             `;
+        }
+
+        // Algoritma Vertical Flowchart
+        let treeHTML = `<div class="tree-wrapper">`;
+        
+        const l1 = TEAM_DB.find(m => m.hierarchy === 1);
+        if(l1) {
+            treeHTML += `<div class="tree-node">${renderCard(l1)}<div class="tree-dot"></div></div>`;
+            
+            const l2 = TEAM_DB.find(m => m.hierarchy === 2);
+            if(l2) {
+                treeHTML += `<div class="tree-node">${renderCard(l2)}<div class="tree-dot"></div></div>`;
+                
+                const l3_members = TEAM_DB.filter(m => m.hierarchy === 3);
+                if(l3_members.length > 0) {
+                    treeHTML += `<div class="tree-children">`;
+                    l3_members.forEach(m => {
+                        treeHTML += `<div class="tree-child">${renderCard(m)}</div>`;
+                    });
+                    treeHTML += `</div>`;
+                }
+            }
+        }
+        treeHTML += `</div>`;
+        
+        contributorGrid.innerHTML = treeHTML;
+
+        // Pasang Event Listener untuk Kartu yang baru dirender
+        document.querySelectorAll('.flip-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+            card.addEventListener('mouseleave', () => {
+                if (card.classList.contains('flipped')) {
+                    card.classList.remove('flipped');
+                }
+            });
         });
+
+        // Re-observe for reveal animations
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }
 });

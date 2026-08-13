@@ -301,18 +301,113 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
 }
 .humanist-author { color: var(--accent-orange); font-family: var(--font-mono); }
 
-/* 3D FLIP CARDS, PHOTOS & SOCIAL LINKS */
-.flip-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+/* VERTICAL FLOWCHART TREE (CONTRIBUTOR) */
+.tree-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
     margin-top: 40px;
+    position: relative;
 }
+
+/* Garis Vertikal Utama antar Node */
+.tree-node {
+    position: relative;
+    padding-bottom: 80px; /* Ruang untuk garis */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tree-node:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 80px;
+    background: var(--accent-orange);
+    box-shadow: 0 0 8px rgba(255, 84, 0, 0.6);
+}
+
+/* Node Cabang Tim (Level 3) */
+.tree-children {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    position: relative;
+    padding-top: 80px;
+    width: 100%;
+    max-width: 1200px;
+}
+/* Garis turun dari Lead Developer ke cabang bawah */
+.tree-children::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 80px;
+    background: var(--accent-orange);
+    box-shadow: 0 0 8px rgba(255, 84, 0, 0.6);
+}
+/* Garis Horizontal yang menghubungkan anggota Level 3 */
+.tree-children::after {
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: var(--accent-orange);
+    box-shadow: 0 0 8px rgba(255, 84, 0, 0.6);
+}
+
+.tree-child {
+    position: relative;
+    padding-top: 80px; /* Ruang untuk garis turun dari horizontal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Garis Vertikal turun ke setiap kartu anggota */
+.tree-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 80px;
+    background: var(--accent-orange);
+    box-shadow: 0 0 8px rgba(255, 84, 0, 0.6);
+}
+/* Titik Node (Circle) di dasar garis */
+.tree-node:not(:last-child)::before, .tree-child::before {
+    /* Override format dot */
+}
+.tree-dot {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: var(--accent-orange);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-orange);
+    z-index: 2;
+}
+
+/* 3D FLIP CARDS, PHOTOS & SOCIAL LINKS */
 .flip-card {
     background: transparent;
-    width: 100%;
-    height: 300px;
-    perspective: 1000px;
+    width: 260px;
+    height: 380px;
+    perspective: 1200px;
     cursor: pointer;
 }
 .flip-card-inner {
@@ -320,10 +415,10 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
     transform-style: preserve-3d;
 }
-.flip-card:hover .flip-card-inner {
+.flip-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
 .flip-card-front, .flip-card-back {
@@ -338,53 +433,89 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
     justify-content: center;
     align-items: center;
     padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 .flip-card-front { background-color: var(--bg-secondary); }
 .flip-card-back {
     background-color: #1a1a1a;
     transform: rotateY(180deg);
 }
-.flip-card-front h3 { color: var(--accent-orange); font-family: var(--font-display); font-size: 1.8rem; margin-top: 15px; }
-.flip-card-back p { color: var(--text-silver); font-family: var(--font-mono); font-size: 0.9rem; }
 
-.profile-img {
-    width: 100px;
-    height: 100px;
+/* Foto Sisi Depan (Dominan) */
+.profile-img-front {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--accent-orange);
-    margin-bottom: 5px;
+    border: 3px solid var(--accent-orange);
+    margin-bottom: 15px;
     filter: grayscale(100%);
-    transition: filter 0.3s;
+    transition: filter 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
-.flip-card:hover .profile-img {
+.flip-card:hover .profile-img-front {
     filter: grayscale(0%);
+    box-shadow: 0 0 25px rgba(255, 84, 0, 0.8);
 }
-
-.avatar-placeholder {
-    width: 100px;
-    height: 100px;
+.avatar-placeholder-front {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     background: #222;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5px;
-    border: 2px solid #444;
+    margin-bottom: 15px;
+    border: 3px solid #444;
+    transition: box-shadow 0.4s ease-in-out, border-color 0.4s ease-in-out;
 }
-.avatar-placeholder i {
-    font-size: 3rem;
+.flip-card:hover .avatar-placeholder-front {
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 25px rgba(255, 84, 0, 0.8);
+}
+.avatar-placeholder-front i {
+    font-size: 5rem;
     color: var(--text-muted);
 }
 
+/* Foto Sisi Belakang (Kecil, di atas data) */
+.profile-img-back {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-orange);
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(255, 84, 0, 0.5);
+}
+.avatar-placeholder-back {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border: 2px solid var(--accent-orange);
+}
+.avatar-placeholder-back i {
+    font-size: 2.5rem;
+    color: var(--text-muted);
+}
+
+/* Teks Sisi Belakang */
+.flip-card-back h3 { color: var(--accent-orange); font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 5px; }
+.flip-card-back p { color: var(--text-silver); font-family: var(--font-mono); font-size: 0.8rem; }
+
 .social-links {
     display: flex;
-    gap: 20px;
-    margin-top: 10px;
+    gap: 12px;
+    margin-top: 15px;
+    justify-content: center;
 }
 .social-links a {
     color: var(--text-silver);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     transition: color 0.3s, transform 0.3s;
 }
 .social-links a:hover {
@@ -487,4 +618,15 @@ footer {
     border-top: 1px solid #222;
     color: var(--text-muted);
     font-size: 0.8rem;
+}
+footer .footer-license {
+    margin-top: 10px;
+    color: #555;
+    font-size: 0.7rem;
+}
+footer .footer-hashtags {
+    margin-top: 10px;
+    color: var(--accent-orange);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
 }
