@@ -83,7 +83,7 @@ const TEAM_DB = [
         instagram: "",
         linkedin: "",
         github: "",
-        foto: "",
+        foto: "assets/media/img/profiles/rosalina.jpeg",
         hierarchy: 2
     },
     { 
