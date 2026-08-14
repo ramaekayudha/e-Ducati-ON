@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(preloader) {
         const lines = [
             "> Initializing Logic Core...",
-            "> Injecting Ducati Fuel...",
+            "> Injecting e-DucatiON Fuel...",
             "> Loading Assessment Engine...",
             "> Booting High-Performance Logic...",
             "> SYSTEM ONLINE."
