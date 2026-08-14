@@ -76,8 +76,8 @@ const TEAM_DB = [
         hierarchy: 2
     },
     { 
-        nama: "[Nama Anggota 3]", 
-        nim: "[NIM]", 
+        nama: "Rosalina May Puspita", 
+        nim: "NIM: 250401010370", 
         peran: "Mahasiswa Informatika Kelas IF207",
         email: "",
         instagram: "",
@@ -87,13 +87,13 @@ const TEAM_DB = [
         hierarchy: 2
     },
     { 
-        nama: "[Nama Anggota 4]", 
-        nim: "[NIM]", 
+        nama: "Cili Tajul Arifin", 
+        nim: "NIM: 250401010354", 
         peran: "Mahasiswa Informatika Kelas IF207",
         email: "",
         instagram: "",
         linkedin: "",
-        github: "",
+        github: "cilitajularifin",
         foto: "",
         hierarchy: 2
     },
