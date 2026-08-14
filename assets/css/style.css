@@ -113,7 +113,15 @@ body.no-scroll { overflow: hidden; height: 100vh; }
     border-color: var(--accent-orange); color: var(--accent-orange);
     transform: translateY(-4px); box-shadow: 0 10px 20px rgba(255, 84, 0, 0.1);
 }
-.btn-secondary:disabled { opacity: 0.3; cursor: not-allowed; border-color: #333; color: #333; transform: none; box-shadow: none; }
+/* PERBAIKAN: Teks tombol disabled dibuat lebih terang agar terlihat */
+.btn-secondary:disabled { 
+    opacity: 0.6; 
+    cursor: not-allowed; 
+    border-color: #444; 
+    color: #777;
+    transform: none;
+    box-shadow: none;
+}
 .btn-group { display: flex; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
 
 .container { padding: 80px 50px; max-width: 1400px; margin: 0 auto; }
