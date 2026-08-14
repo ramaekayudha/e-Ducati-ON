@@ -82,7 +82,7 @@ const TEAM_DB = [
         email: "",
         instagram: "",
         linkedin: "",
-        github: "",
+        github: "itsrose19",
         foto: "assets/media/img/profiles/rosalina.jpeg",
         hierarchy: 2
     },
