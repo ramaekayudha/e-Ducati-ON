@@ -98,13 +98,13 @@ const TEAM_DB = [
         hierarchy: 2
     },
     { 
-        nama: "[Nama Anggota 5]", 
-        nim: "[NIM]", 
+        nama: "Charel Junior Ratu", 
+        nim: "NIM: 250401010375", 
         peran: "Mahasiswa Informatika Kelas IF207",
         email: "",
         instagram: "",
         linkedin: "",
-        github: "",
+        github: "Chareljuniorrattu",
         foto: "",
         hierarchy: 2
     }
