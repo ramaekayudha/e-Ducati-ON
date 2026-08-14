@@ -1,6 +1,8 @@
+// E-DUCATI ON ENTERPRISE - APP LOGIC (FULL)
+
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Dynamic Copyright Year
+    // 0. Dynamic Copyright Year
     const yearSpan = document.getElementById('currentYear');
     if(yearSpan) {
         yearSpan.innerText = new Date().getFullYear();
@@ -84,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Render Tabel Kurikulum (Dinamis)
+    // 4. Render Tabel Kurikulum (Dinamis)
     const tableBody = document.getElementById('curriculumTableBody');
     if(tableBody) {
         window.renderCurriculumTable = function() {
@@ -97,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(item.semester !== currentSemester) {
                     currentSemester = item.semester;
                     tableBody.innerHTML += `
-                        <tr style="background: #000);">
+                        <tr style="background: #000;">
                             <td colspan="6" style="color: var(--accent-orange); font-family: var(--font-display); font-size: 1.5rem; padding: 20px 15px;">
                                 SEMESTER ${currentSemester} <span style="color: var(--text-muted); font-size: 0.9rem; font-family: var(--font-mono);">| T.A ${item.tahun_ajaran} | (${item.status})</span>
                             </td>
@@ -119,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCurriculumTable();
     }
 
-    // Logika Form Penambahan KRS Mendatang
+    // 5. Logika Form Penambahan KRS Mendatang
     const krsForm = document.getElementById('krsForm');
     if(krsForm) {
         krsForm.addEventListener('submit', function(e) {
@@ -142,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Render Statistik Kesulitan
+    // 6. Render Statistik Kesulitan
     const chartContainer = document.getElementById('statsChart');
     if(chartContainer) {
         STATS_DB.forEach(stat => {
@@ -155,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { document.querySelectorAll('.bar-fill').forEach(bar => { bar.style.width = bar.getAttribute('data-width'); }); }, 500);
     }
 
-    // Assessment Engine (20 Soal, Tampil 5 Acak, Regenerate 1x)
+    // 7. Assessment Engine (20 Soal, Tampil 5 Acak, Regenerate 1x)
     const questionContainer = document.getElementById('questionContainer');
     if(questionContainer) {
         let regenerateCount = 0;
@@ -208,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Render Contributor Tree (Vertikal Flowchart - 2 Level)
+    // 8. Render Contributor Tree (Vertikal Flowchart - 2 Level)
     const contributorGrid = document.getElementById('contributorGrid');
     if(contributorGrid) {
         function renderCard(member) {
@@ -223,6 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (member.instagram) socialHTML += `<a href="https://instagram.com/${member.instagram}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>`;
             if (member.linkedin) socialHTML += `<a href="https://linkedin.com/in/${member.linkedin}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>`;
             if (member.github) socialHTML += `<a href="https://github.com/${member.github}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>`;
+            
             return `
                 <div class="flip-card reveal">
                     <div class="flip-card-inner">
@@ -235,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${photoBackHTML}
                             <h3>${member.nama}</h3>
                             <p style="color: var(--accent-orange); font-family: var(--font-mono); font-size: 0.8rem;">${member.nim}</p>
+                            <img src="assets/media/img/unsia.png" alt="Logo UNSIA" class="unsia-logo-card">
                             <p style="font-size: 0.8rem; color: var(--text-silver); margin-top: 5px;">${member.peran}</p>
                             <div class="social-links">${socialHTML}</div>
                         </div>
@@ -263,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // THE PIT STOP: DEBUG TERMINAL LOGIC
+    // 9. THE PIT STOP: DEBUG TERMINAL LOGIC
     const pitstopContainer = document.getElementById('pitstopContainer');
     if(pitstopContainer) {
         let currentChallengeIndex = 0;
@@ -316,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderChallenge();
     }
 
-    // THE ALGORITHM REDLINE VISUALIZER LOGIC
+    // 10. THE ALGORITHM REDLINE VISUALIZER LOGIC
     const startRedlineBtn = document.getElementById('startRedline');
     if (startRedlineBtn) {
         let array = [];
@@ -500,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateGauge();
     }
 
-    // KNOWLEDGE BASE / LIBRARY RENDER LOGIC
+    // 11. KNOWLEDGE BASE / LIBRARY RENDER LOGIC
     const libraryGrid = document.getElementById('libraryGrid');
     if(libraryGrid) {
         LIBRARY_DB.forEach(item => {

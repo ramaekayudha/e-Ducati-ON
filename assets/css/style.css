@@ -1,3 +1,4 @@
+/* ===== E-DUCATI ON V1.0 ENTERPRISE - STYLE.CSS (FULL + RESPONSIVE) ===== */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
 
 :root {
@@ -190,6 +191,20 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--accent-orange)
 .social-links a { color: var(--text-silver); font-size: 1.1rem; transition: color 0.3s, transform 0.3s; }
 .social-links a:hover { color: var(--accent-orange); transform: translateY(-3px); }
 
+/* UNSIA LOGO ON CONTRIBUTOR CARDS */
+.unsia-logo-card {
+    width: 40px;
+    height: auto;
+    margin: 10px 0 5px 0;
+    filter: grayscale(100%) brightness(1.5);
+    opacity: 0.8;
+    transition: filter 0.4s, opacity 0.4s;
+}
+.flip-card.flipped .unsia-logo-card {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+}
+
 /* MEDIA HUB (STACKED LAYOUT & DUAL AUDIO GRID) */
 .media-stack-grid {
     display: flex;
@@ -335,6 +350,11 @@ footer .footer-hashtags { margin-top: 10px; color: var(--accent-orange); font-fa
     overflow: hidden; word-wrap: break-word;
 }
 
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES (MOBILE FRIENDLY)
+   ========================================== */
+
+/* Breakpoint untuk Tablet & Phablet (Max-width 768px) */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -342,7 +362,7 @@ footer .footer-hashtags { margin-top: 10px; color: var(--accent-orange); font-fa
         padding: 15px 20px;
     }
     .nav-links a {
-        margin: 0 10px;
+        margin: 0 10px; /* Jarak antar menu di navbar */
     }
     .container {
         padding: 60px 20px;
@@ -351,12 +371,12 @@ footer .footer-hashtags { margin-top: 10px; color: var(--accent-orange); font-fa
         font-size: 3rem;
     }
     .hero h1 {
-        font-size: 16vw;
+        font-size: 16vw; /* Sesuaikan ukuran font hero di tablet */
     }
     .vision-grid, .media-cinema-grid, .media-audio-grid, .redline-grid {
         grid-template-columns: 1fr !important;
     }
-
+    /* Override inline style IPK Simulator & KRS Form di curriculum.html */
     .container div[style*="grid-template-columns: 2fr 1fr"],
     .container div[style*="grid-template-columns: 1fr 1fr"] {
         grid-template-columns: 1fr !important;
@@ -370,10 +390,34 @@ footer .footer-hashtags { margin-top: 10px; color: var(--accent-orange); font-fa
         height: 65px;
     }
     .bar-container {
-        height: 200px;
+        height: 200px; /* Kurangi tinggi bar visualizer agar muat */
+    }
+    
+    /* CONTRIBUTOR TREE MOBILE FIX */
+    .tree-node {
+        width: 100%; /* Tambahkan ini agar kartu Dosen PA ikut mengembang */
+        max-width: 300px;
+    }
+    .tree-children {
+        flex-direction: column; /* Tumpuk vertikal */
+        align-items: center;
+        gap: 80px; /* Ruang untuk garis vertikal antar kartu */
+        padding-top: 80px; /* Jarak dari kartu Dosen PA */
+    }
+    .tree-children::before {
+        display: none; /* Sembunyikan garis horizontal di mobile */
+    }
+    .tree-child {
+        width: 100%;
+        max-width: 300px; /* Batasi lebar kartu agar tidak sesak */
+    }
+    .tree-child::before {
+        height: 80px; /* Panjang garis penghubung vertikal */
+        top: -80px;
     }
 }
 
+/* Breakpoint untuk Mobile Phone (Max-width 480px) */
 @media (max-width: 480px) {
     .container {
         padding: 40px 15px;
@@ -392,7 +436,7 @@ footer .footer-hashtags { margin-top: 10px; color: var(--accent-orange); font-fa
         font-size: 3rem;
     }
     .btn-primary, .btn-secondary {
-        width: 100%;
+        width: 100%; /* Tombol full width di mobile */
         padding: 12px 20px;
         font-size: 0.8rem;
     }
@@ -400,11 +444,11 @@ footer .footer-hashtags { margin-top: 10px; color: var(--accent-orange); font-fa
         gap: 10px;
     }
     .flip-card {
-        width: 100%;
+        width: 100%; /* Kartu tim memenuhi layar mobile */
         max-width: 280px;
     }
     .terminal-panel {
-        overflow-x: auto;
+        overflow-x: auto; /* Cegah code box melebar keluar layar */
     }
     .code-box {
         font-size: 0.8rem;
