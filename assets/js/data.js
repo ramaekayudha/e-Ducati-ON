@@ -98,7 +98,7 @@ const TEAM_DB = [
         hierarchy: 2
     },
     { 
-        nama: "Charel Junior Ratu", 
+        nama: "Charel Junior Rattu", 
         nim: "NIM: 250401010375", 
         peran: "Mahasiswa Informatika Kelas IF207",
         email: "",
