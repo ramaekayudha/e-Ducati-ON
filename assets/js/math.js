@@ -1,11 +1,8 @@
-// E-DUCATI ON ENTERPRISE - MATH LOGIC & IPK SIMULATOR (FULL)
-
 document.addEventListener('DOMContentLoaded', () => {
     const ipkForm = document.getElementById('ipkForm');
     if(ipkForm) {
         const ipkInputs = document.getElementById('ipkInputs');
         
-        // Filter ketat: Hanya mata kuliah berstatus "Taken" yang masuk kalkulator
         const activeCourses = CURRICULUM_DB.filter(item => item.status === "Taken");
         let totalSks = 0;
         

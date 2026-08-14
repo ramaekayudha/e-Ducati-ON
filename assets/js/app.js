@@ -1,8 +1,6 @@
-// E-DUCATI ON ENTERPRISE - APP LOGIC (FULL)
-
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 0. Dynamic Copyright Year
+    // Dynamic Copyright Year
     const yearSpan = document.getElementById('currentYear');
     if(yearSpan) {
         yearSpan.innerText = new Date().getFullYear();
@@ -86,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 4. Render Tabel Kurikulum (Dinamis)
+    // Render Tabel Kurikulum (Dinamis)
     const tableBody = document.getElementById('curriculumTableBody');
     if(tableBody) {
         window.renderCurriculumTable = function() {
@@ -121,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCurriculumTable();
     }
 
-    // 5. Logika Form Penambahan KRS Mendatang
+    // Logika Form Penambahan KRS Mendatang
     const krsForm = document.getElementById('krsForm');
     if(krsForm) {
         krsForm.addEventListener('submit', function(e) {
@@ -144,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Render Statistik Kesulitan
+    // Render Statistik Kesulitan
     const chartContainer = document.getElementById('statsChart');
     if(chartContainer) {
         STATS_DB.forEach(stat => {
@@ -157,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { document.querySelectorAll('.bar-fill').forEach(bar => { bar.style.width = bar.getAttribute('data-width'); }); }, 500);
     }
 
-    // 7. Assessment Engine (20 Soal, Tampil 5 Acak, Regenerate 1x)
+    // Assessment Engine (20 Soal, Tampil 5 Acak, Regenerate 1x)
     const questionContainer = document.getElementById('questionContainer');
     if(questionContainer) {
         let regenerateCount = 0;
@@ -210,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 8. Render Contributor Tree (Vertikal Flowchart - 2 Level)
+    // Render Contributor Tree (Vertikal Flowchart - 2 Level)
     const contributorGrid = document.getElementById('contributorGrid');
     if(contributorGrid) {
         function renderCard(member) {
@@ -265,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 9. THE PIT STOP: DEBUG TERMINAL LOGIC
+    // THE PIT STOP: DEBUG TERMINAL LOGIC
     const pitstopContainer = document.getElementById('pitstopContainer');
     if(pitstopContainer) {
         let currentChallengeIndex = 0;
@@ -318,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderChallenge();
     }
 
-    // 10. THE ALGORITHM REDLINE VISUALIZER LOGIC
+    // THE ALGORITHM REDLINE VISUALIZER LOGIC
     const startRedlineBtn = document.getElementById('startRedline');
     if (startRedlineBtn) {
         let array = [];
@@ -502,7 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateGauge();
     }
 
-    // 11. KNOWLEDGE BASE / LIBRARY RENDER LOGIC
+    // KNOWLEDGE BASE / LIBRARY RENDER LOGIC
     const libraryGrid = document.getElementById('libraryGrid');
     if(libraryGrid) {
         LIBRARY_DB.forEach(item => {
@@ -515,7 +513,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </a>
             `;
         });
-        // Re-observe newly added items
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }
 });

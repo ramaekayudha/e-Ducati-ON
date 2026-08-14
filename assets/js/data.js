@@ -1,5 +1,3 @@
-// E-DUCATI ON ENTERPRISE - DATA LAYER (FULL)
-
 const CURRICULUM_DB = [
     { kode: "200002101", matkul: "Pendidikan Pancasila", sks: 2, dosen: "Hj. Trayanti Wisalina, A.Md., S.S., M.Si", kategori: "Humanis", tahun_ajaran: "2025/2026", semester: 1, status: "Taken" },
     { kode: "200002106", matkul: "Estetika Humanisme", sks: 2, dosen: "Lia Amelia Nurkhazanah, S.Pd., M.Hum", kategori: "Humanis", tahun_ajaran: "2025/2026", semester: 1, status: "Taken" },
@@ -57,8 +55,8 @@ const TEAM_DB = [
     },
     { 
         nama: "Rama Eka Yudha", 
-        nim: "250401010385", 
-        peran: "Lead Developer & Arsitek",
+        nim: "NIM: 250401010385", 
+        peran: "Mahasiswa Informatika Kelas IF207",
         email: "250401010385@mhs.unsia.ac.id",
         instagram: "ramaekayudha",
         linkedin: "ramaekayudha",
@@ -68,8 +66,8 @@ const TEAM_DB = [
     },
     { 
         nama: "Aditya Nanda", 
-        nim: "250401010388", 
-        peran: "Full Stack Developer",
+        nim: "NIM: 250401010388", 
+        peran: "Mahasiswa Informatika Kelas IF207",
         email: "250401010388.aditya@mhs.unsia.ac.id",
         instagram: "",
         linkedin: "",
@@ -80,33 +78,33 @@ const TEAM_DB = [
     { 
         nama: "[Nama Anggota 3]", 
         nim: "[NIM]", 
-        peran: "Algorithm Specialist",
-        email: "email@mhs.unsia.ac.id",
-        instagram: "username_ig",
-        linkedin: "username_linkedin",
-        github: "username_gh",
+        peran: "Mahasiswa Informatika Kelas IF207",
+        email: "",
+        instagram: "",
+        linkedin: "",
+        github: "",
         foto: "",
         hierarchy: 2
     },
     { 
         nama: "[Nama Anggota 4]", 
         nim: "[NIM]", 
-        peran: "Database Engineer",
-        email: "email@mhs.unsia.ac.id",
-        instagram: "username_ig",
-        linkedin: "username_linkedin",
-        github: "username_gh",
+        peran: "Mahasiswa Informatika Kelas IF207",
+        email: "",
+        instagram: "",
+        linkedin: "",
+        github: "",
         foto: "",
         hierarchy: 2
     },
     { 
         nama: "[Nama Anggota 5]", 
         nim: "[NIM]", 
-        peran: "Documentation & Testing",
-        email: "email@mhs.unsia.ac.id",
-        instagram: "username_ig",
-        linkedin: "username_linkedin",
-        github: "username_gh",
+        peran: "Mahasiswa Informatika Kelas IF207",
+        email: "",
+        instagram: "",
+        linkedin: "",
+        github: "",
         foto: "",
         hierarchy: 2
     }
@@ -154,7 +152,6 @@ const CHALLENGES_DB = [
     }
 ];
 
-// DATABASE FITUR BARU: KNOWLEDGE BASE / LIBRARY
 const LIBRARY_DB = [
     { 
         title: "MDN Web Docs", 
