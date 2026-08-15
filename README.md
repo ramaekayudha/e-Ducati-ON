@@ -1,6 +1,5 @@
-==============================================================
- e-Ducati ON V1.0 Enterprise
-==============================================================
+# e-Ducati ON V1.0 Enterprise
+
 Aplikasi Web Prediksi Kesiapan Jurusan Informatika & Simulator Akademik
 Proyek Ujian Akhir Semester (UAS) - Pemrograman Web I (IF207)
 --------------------------------------------------------------
@@ -19,11 +18,11 @@ INFORMASI PROYEK
 
 TIM PENGEMBANG - KELOMPOK 2 (KONTRIBUTOR)
 --------------------------------------------------------------
-1. Rama Eka Yudha (250401010385) - Mahasiswa PJJ Informatika
-2. Aditya Nanda (250401010388) - Mahasiswa PJJ Informatika
-3. Rosalina May Puspita (250401010370)- Mahasiswa PJJ Informatika
-4. Cili Tajul Arifin (250401010354) - Mahasiswa PJJ Informatika
-5. Charel Junior Rattu (250401010375) - Mahasiswa PJJ Informatika
+1. Rama Eka Yudha (250401010385) - Mahasiswa PJJ Informatika IF207
+2. Aditya Nanda (250401010388) - Mahasiswa PJJ Informatika IF207
+3. Rosalina May Puspita (250401010370)- Mahasiswa PJJ Informatika IF207
+4. Cili Tajul Arifin (250401010354) - Mahasiswa PJJ Informatika IF207
+5. Charel Junior Rattu (250401010375) - Mahasiswa PJJ Informatika IF207
 
 FITUR UTAMA
 --------------------------------------------------------------
