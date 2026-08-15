@@ -105,7 +105,7 @@ const TEAM_DB = [
         instagram: "",
         linkedin: "",
         github: "Chareljuniorrattu",
-        foto: "",
+        foto: "assets/media/img/profiles/charel.jpeg",
         hierarchy: 2
     }
 ];
