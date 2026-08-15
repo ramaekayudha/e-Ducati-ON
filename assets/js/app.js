@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(preloader) {
         const lines = [
             "> Initializing Logic Core...",
-            "> Injecting e-Ducati ON Fuel...",
+            "> Injecting Ducati Fuel...",
             "> Loading Assessment Engine...",
             "> Booting High-Performance Logic...",
             "> SYSTEM ONLINE."
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 count += 1;
                 statNum.innerText = count + "%";
                 if (count >= target) clearInterval(interval);
-            }, 30);
+            }, 60); // PERBAIKAN: Melambatkan animasi dari 30ms menjadi 60ms agar terasa lebih berat dan sinematik
         }
     }
 
@@ -360,11 +360,9 @@ document.addEventListener('DOMContentLoaded', () => {
         function updateGauge() {
             let rpm = Math.min(8000, comparisons * 5);
             let rotation = (rpm / 8000) * 180 - 90;
-            // PERBAIKAN: Tambahkan translateX(-50%) agar jarum berputar dari tengah
             if(rpmNeedle) rpmNeedle.style.transform = `translateX(-50%) rotate(${rotation}deg)`;
             if(rpmValue) rpmValue.innerText = Math.floor(rpm);
             if(opsValue) opsValue.innerText = comparisons;
-            
             if (rpm > 6500) {
                 if(rpmNeedle) rpmNeedle.style.background = '#ff4444';
                 if(rpmNeedle) rpmNeedle.style.boxShadow = '0 0 15px #ff4444';
