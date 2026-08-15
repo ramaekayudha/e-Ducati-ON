@@ -19,43 +19,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.2 });
     reveals.forEach(reveal => observer.observe(reveal));
 
-    // 0.5 IGNITION SEQUENCE PRELOADER LOGIC
+    // 0.5 IGNITION SEQUENCE PRELOADER LOGIC (DENGAN SESSION STORAGE)
     const preloader = document.getElementById('preloader');
     if(preloader) {
-        const lines = [
-            "> Initializing Logic Core...",
-            "> Injecting Ducati Fuel...",
-            "> Loading Assessment Engine...",
-            "> Booting High-Performance Logic...",
-            "> SYSTEM ONLINE."
-        ];
-        const terminalText = document.getElementById('terminalText');
-        let lineIndex = 0;
-        let charIndex = 0;
-        
-        function typeLine() {
-            if (lineIndex < lines.length) {
-                if (charIndex < lines[lineIndex].length) {
-                    terminalText.innerHTML += lines[lineIndex].charAt(charIndex);
-                    charIndex++;
-                    setTimeout(typeLine, 30);
+
+        if (sessionStorage.getItem('isBooted') === 'true') {
+
+            preloader.style.display = 'none';
+            document.body.classList.remove('no-scroll');
+            initHeroAnimations();
+        } else {
+
+            const lines = [
+                "> Initializing Logic Core...",
+                "> Injecting e-Ducati ON Fuel...",
+                "> Loading Assessment Engine...",
+                "> Booting High-Performance Logic...",
+                "> SYSTEM ONLINE."
+            ];
+            const terminalText = document.getElementById('terminalText');
+            let lineIndex = 0;
+            let charIndex = 0;
+            
+            function typeLine() {
+                if (lineIndex < lines.length) {
+                    if (charIndex < lines[lineIndex].length) {
+                        terminalText.innerHTML += lines[lineIndex].charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeLine, 30);
+                    } else {
+                        terminalText.innerHTML += "\n";
+                        lineIndex++;
+                        charIndex = 0;
+                        setTimeout(typeLine, 300);
+                    }
                 } else {
-                    terminalText.innerHTML += "\n";
-                    lineIndex++;
-                    charIndex = 0;
-                    setTimeout(typeLine, 300);
+                    setTimeout(() => {
+                        preloader.classList.add('hide');
+                        document.body.classList.remove('no-scroll');
+                        const heroContent = document.querySelector('.hero-content');
+                        if(heroContent) heroContent.style.animation = "fadeInUp 1s ease-out forwards";
+                        initHeroAnimations();
+
+                        sessionStorage.setItem('isBooted', 'true');
+                    }, 1000);
                 }
-            } else {
-                setTimeout(() => {
-                    preloader.classList.add('hide');
-                    document.body.classList.remove('no-scroll');
-                    const heroContent = document.querySelector('.hero-content');
-                    if(heroContent) heroContent.style.animation = "fadeInUp 1s ease-out forwards";
-                    initHeroAnimations();
-                }, 1000);
             }
+            typeLine();
         }
-        typeLine();
     } else {
         initHeroAnimations();
     }
@@ -82,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 count += 1;
                 statNum.innerText = count + "%";
                 if (count >= target) clearInterval(interval);
-            }, 60); // PERBAIKAN: Melambatkan animasi dari 30ms menjadi 60ms agar terasa lebih berat dan sinematik
+            }, 60); 
         }
     }
 
